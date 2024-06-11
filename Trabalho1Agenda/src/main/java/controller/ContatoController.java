@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ContatoController {
-    private ContatoService contatoService;
+    private final ContatoService contatoService;
 
     public ContatoController() {
         this.contatoService = new ContatoService();

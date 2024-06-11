@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ContatoService {
-    private List<Contato> contatos = new ArrayList<>();
+    private final List<Contato> contatos = new ArrayList<>();
     private int nextId = 1; // Para gerar IDs automaticamente
 
     public void adicionarContato(Contato contato) {

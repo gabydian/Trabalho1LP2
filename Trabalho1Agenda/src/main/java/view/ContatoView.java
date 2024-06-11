@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContatoView {
-    private static Scanner teclado = new Scanner(System.in);
-    private static ContatoController contatoController = new ContatoController();
+    private static final Scanner teclado = new Scanner(System.in);
+    private static final ContatoController contatoController = new ContatoController();
 
     public static void main(String[] args) {
         boolean rodar = true;
@@ -41,7 +41,7 @@ public class ContatoView {
                     atualizarContato();
                     break;
                 case 5:
-                    buscarContatos();
+                    buscarContato();
                     break;
                 case 6:
                     listarAniversarios();
@@ -101,7 +101,7 @@ public class ContatoView {
         System.out.println("Contato atualizado com sucesso!");
     }
 
-    private static void buscarContatos() {
+    private static void buscarContato() {
         System.out.println("Prefixo para pesquisa: ");
         String prefix = teclado.nextLine();
 
