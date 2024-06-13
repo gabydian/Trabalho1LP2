@@ -4,6 +4,7 @@ import model.Contato;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,16 +39,16 @@ public class ContatoService {
         }
     }
 
-    public List<Contato> buscarContato(String prefix) {
+    public List<Contato> buscarContato(String letra) {
         return contatos.stream()
-                .filter(contato -> contato.getNome().toLowerCase().startsWith(prefix.toLowerCase()))
+                .filter(contato -> contato.getNome().toLowerCase().startsWith(letra.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public List<Contato> listarAniversarios(int mes) {
         return contatos.stream()
                 .filter(contato -> contato.getDataNascimento().getMonthValue() == mes)
-                .sorted((c1, c2) -> c1.getDataNascimento().compareTo(c2.getDataNascimento()))
+                .sorted(Comparator.comparing(Contato::getDataNascimento))
                 .collect(Collectors.toList());
     }
 }

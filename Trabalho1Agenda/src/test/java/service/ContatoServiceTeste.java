@@ -10,7 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ContatoServiceTeste {
-    private ContatoService contatoService;
+    public ContatoService contatoService;
 
     @BeforeEach
     public void setUp() {

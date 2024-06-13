@@ -30,8 +30,8 @@ public class ContatoController {
         contatoService.atualizarContato(id, nome, telefone, email, dataNascimento);
     }
 
-    public List<Contato> buscarContato(String prefix) {
-        return contatoService.buscarContato(prefix);
+    public List<Contato> buscarContato(String letra) {
+        return contatoService.buscarContato(letra);
     }
 
     public List<Contato> listarAniversarios(int mes) {

@@ -20,7 +20,7 @@ public class ContatoView {
             System.out.println("2. Listar Contatos");
             System.out.println("3. Remover Contato");
             System.out.println("4. Alterar Contato");
-            System.out.println("5. Pesquisar Contatos por Prefixo");
+            System.out.println("5. Pesquisar Contatos por letra");
             System.out.println("6. Listar Aniversariantes do Mês");
             System.out.println("7. Sair");
             System.out.print("Escolha uma opção: ");
@@ -103,9 +103,9 @@ public class ContatoView {
 
     private static void buscarContato() {
         System.out.println("Prefixo para pesquisa: ");
-        String prefix = teclado.nextLine();
+        String letra = teclado.nextLine();
 
-        List<Contato> contatos = contatoController.buscarContato(prefix);
+        List<Contato> contatos = contatoController.buscarContato(letra);
         contatos.forEach(contato -> System.out.println(contato));
     }
 
