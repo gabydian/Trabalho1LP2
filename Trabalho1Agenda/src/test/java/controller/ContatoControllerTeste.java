@@ -60,7 +60,7 @@ public class ContatoControllerTeste {
     public void testBuscarContato() {
         contatoController.addContato("Alice", "123456789", "alice@example.com", LocalDate.of(1967, 3, 24));
         contatoController.addContato("Bob", "987654321", "bob@example.com", LocalDate.of(1999, 10, 31));
-        List<Contato> resultado = contatoController.buscarContato("Al");
+        List<Contato> resultado = contatoController.buscarContatoPorLetra("Al");
 
         assertEquals(1, resultado.size());
         assertEquals("Alice", resultado.get(0).getNome());
@@ -73,7 +73,7 @@ public class ContatoControllerTeste {
         contatoService.adicionarContato(c1);
         contatoService.adicionarContato(c2);
 
-        List<Contato> resultado = contatoService.listarAniversarios(1); // Correção: passando o valor real do mês
+        List<Contato> resultado = contatoService.listarAniversarios(1);
         assertEquals(2, resultado.size());
         assertEquals("Alice", resultado.get(0).getNome());
         assertEquals("Bob", resultado.get(1).getNome());

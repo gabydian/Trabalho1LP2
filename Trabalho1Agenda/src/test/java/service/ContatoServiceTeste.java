@@ -63,7 +63,7 @@ public class ContatoServiceTeste {
         contatoService.adicionarContato(c1);
         contatoService.adicionarContato(c2);
 
-        List<Contato> resultado = contatoService.buscarContato("Al");
+        List<Contato> resultado = contatoService.buscarContatoPorLetra("Al");
 
         assertEquals(1, resultado.size());
         assertEquals("Alice", resultado.get(0).getNome());
@@ -76,7 +76,7 @@ public class ContatoServiceTeste {
         contatoService.adicionarContato(c1);
         contatoService.adicionarContato(c2);
 
-        List<Contato> resultado = contatoService.listarAniversarios(1); // Correção: passando o valor real do mês
+        List<Contato> resultado = contatoService.listarAniversarios(1);
         assertEquals(2, resultado.size());
         assertEquals("Alice", resultado.get(0).getNome());
         assertEquals("Bob", resultado.get(1).getNome());

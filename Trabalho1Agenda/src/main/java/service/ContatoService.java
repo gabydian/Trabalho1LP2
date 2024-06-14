@@ -4,12 +4,11 @@ import model.Contato;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ContatoService {
-    private final List<Contato> contatos = new ArrayList<>();
+    private List<Contato> contatos = new ArrayList<>();
     private int nextId = 1; // Para gerar IDs automaticamente
 
     public void adicionarContato(Contato contato) {
@@ -20,6 +19,12 @@ public class ContatoService {
     public List<Contato> listaContatos() {
         return contatos.stream()
                 .sorted((c1, c2) -> c1.getNome().compareToIgnoreCase(c2.getNome()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Contato> listaContatosPorId() {
+        return contatos.stream()
+                .sorted((c1, c2) -> Integer.compare(c1.getId(), c2.getId()))
                 .collect(Collectors.toList());
     }
 
@@ -39,16 +44,16 @@ public class ContatoService {
         }
     }
 
-    public List<Contato> buscarContato(String letra) {
+    public List<Contato> buscarContatoPorLetra(String letra) {
         return contatos.stream()
-                .filter(contato -> contato.getNome().toLowerCase().startsWith(letra.toLowerCase()))
+                .filter(contato -> contato.getNome().toLowerCase().contains(letra.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public List<Contato> listarAniversarios(int mes) {
         return contatos.stream()
                 .filter(contato -> contato.getDataNascimento().getMonthValue() == mes)
-                .sorted(Comparator.comparing(Contato::getDataNascimento))
+                .sorted((c1, c2) -> c1.getDataNascimento().compareTo(c2.getDataNascimento()))
                 .collect(Collectors.toList());
     }
 }

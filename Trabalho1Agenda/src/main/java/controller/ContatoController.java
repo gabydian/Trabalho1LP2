@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ContatoController {
-    private final ContatoService contatoService;
+    private ContatoService contatoService;
 
     public ContatoController() {
         this.contatoService = new ContatoService();
@@ -19,7 +19,7 @@ public class ContatoController {
     }
 
     public List<Contato> listarContato() {
-        return contatoService.listaContatos();
+        return contatoService.listaContatosPorId();
     }
 
     public void removerContato(int id) {
@@ -30,8 +30,8 @@ public class ContatoController {
         contatoService.atualizarContato(id, nome, telefone, email, dataNascimento);
     }
 
-    public List<Contato> buscarContato(String letra) {
-        return contatoService.buscarContato(letra);
+    public List<Contato> buscarContatoPorLetra(String letra) {
+        return contatoService.buscarContatoPorLetra(letra);
     }
 
     public List<Contato> listarAniversarios(int mes) {

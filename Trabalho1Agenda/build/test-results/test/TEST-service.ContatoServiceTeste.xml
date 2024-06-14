@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="service.ContatoServiceTeste" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-06-13T22:05:35" hostname="PC301-04" time="0.019">
+<testsuite name="service.ContatoServiceTeste" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-06-14T18:18:49" hostname="GABRIELNOTE" time="0.049">
   <properties/>
-  <testcase name="testBuscarContato()" classname="service.ContatoServiceTeste" time="0.012"/>
-  <testcase name="testAdicionarContato()" classname="service.ContatoServiceTeste" time="0.0"/>
-  <testcase name="testRemoverContato()" classname="service.ContatoServiceTeste" time="0.001"/>
-  <testcase name="testListarAniversarios()" classname="service.ContatoServiceTeste" time="0.001"/>
+  <testcase name="testBuscarContato()" classname="service.ContatoServiceTeste" time="0.026"/>
+  <testcase name="testAdicionarContato()" classname="service.ContatoServiceTeste" time="0.008"/>
+  <testcase name="testRemoverContato()" classname="service.ContatoServiceTeste" time="0.006"/>
+  <testcase name="testListarAniversarios()" classname="service.ContatoServiceTeste" time="0.002"/>
   <testcase name="testAtualizarContato()" classname="service.ContatoServiceTeste" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
